@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class OrderRepositoryV0 {
 
-    public void save(String itemId) throws IllegalAccessException {
+    public void save(String itemId)  {
         if (itemId.equals("ex")) {
-            throw new IllegalAccessException("예외 발생!");
+            throw new IllegalStateException("예외 발생!");
         }
 
         sleep(1000);

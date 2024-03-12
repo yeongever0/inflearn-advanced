@@ -12,12 +12,12 @@ public class OrderServiceV3 {
     private final OrderRepositoryV3 orderRepository;
     private final LogTrace trace;
 
-    public void orderItem(String itemId) throws IllegalAccessException {
+    public void orderItem(String itemId)  {
 
         TraceStatus status = null;
         try {
             status = trace.begin("OrderService.request()");
-            orderRepository.save(status.getTraceId(), itemId);
+            orderRepository.save(itemId);
             trace.end(status);
         } catch (Exception e) {
             trace.exception(status, e);

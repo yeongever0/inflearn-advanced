@@ -12,13 +12,13 @@ public class OrderRepositoryV2 {
 
     private final HelloTraceV2 trace;
 
-    public void save(TraceId traceId, String itemId) throws IllegalAccessException {
+    public void save(TraceId traceId, String itemId)  {
 
         TraceStatus status = null;
         try {
             status = trace.beginSync(traceId, "OrderRepository.request()");
             if (itemId.equals("ex")) {
-                throw new IllegalAccessException("예외 발생!");
+                throw new IllegalStateException("예외 발생!");
             }
             sleep(1000);
             trace.end(status);

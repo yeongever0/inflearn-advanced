@@ -1,8 +1,8 @@
 package hello.advanced.app.v3;
 
-import hello.advanced.trace.TraceId;
 import hello.advanced.trace.TraceStatus;
 import hello.advanced.trace.logTrace.LogTrace;
+import hello.advanced.trace.template.AbstractTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,13 +12,13 @@ public class OrderRepositoryV3 {
 
     private final LogTrace trace;
 
-    public void save(TraceId traceId, String itemId) throws IllegalAccessException {
+    public void save(String itemId)  {
 
         TraceStatus status = null;
         try {
             status = trace.begin("OrderRepository.request()");
             if (itemId.equals("ex")) {
-                throw new IllegalAccessException("예외 발생!");
+                throw new IllegalStateException("예외 발생!");
             }
             sleep(5000);
             trace.end(status);
