@@ -11,7 +11,7 @@ public abstract class AbstractTemplate {
         call();
         //비즈니스 로직 종료
         long endTime = System.currentTimeMillis();
-        long resultTime = endTime= startTime;
+        long resultTime = endTime - startTime;
         log.info("resultTime = {}", resultTime);
     }
 

@@ -21,7 +21,7 @@ public class TemplateMethodTest {
         log.info("비즈니스 로직1 실행");
         //비즈니스 로직 종료
         long endTime = System.currentTimeMillis();
-        long resultTime = endTime= startTime;
+        long resultTime = endTime - startTime;
         log.info("resultTime = {}", resultTime);
     }
 
@@ -31,7 +31,7 @@ public class TemplateMethodTest {
         log.info("비즈니스 로직2 실행");
         //비즈니스 로직 종료
         long endTime = System.currentTimeMillis();
-        long resultTime = endTime= startTime;
+        long resultTime = endTime - startTime;
         log.info("resultTime = {}", resultTime);
     }
 
