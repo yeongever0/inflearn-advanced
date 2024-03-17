@@ -14,7 +14,7 @@ public class OrderControllerV2 {
     private final HelloTraceV2 trace;
 
     @GetMapping("/v2/request")
-    public String request(String itemId) throws IllegalAccessException {
+    public String request(String itemId)  {
 
         TraceStatus status = null;
         try {

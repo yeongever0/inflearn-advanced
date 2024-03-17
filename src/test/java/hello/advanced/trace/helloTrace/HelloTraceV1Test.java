@@ -18,6 +18,6 @@ class HelloTraceV1Test {
     void begin_exception() {
         HelloTraceV1 trace = new HelloTraceV1();
         TraceStatus status = trace.begin("hello");
-        trace.exception(status, new IllegalAccessException());
+        trace.exception(status, new IllegalStateException());
     }
 }

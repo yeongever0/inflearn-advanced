@@ -15,7 +15,7 @@ public class OrderControllerV3 {
     private final LogTrace trace;
 
     @GetMapping("/v3/request")
-    public String request(@RequestParam(value="itemId")String itemId) throws IllegalAccessException {
+    public String request(@RequestParam(value="itemId")String itemId)  {
 
         TraceStatus status = null;
         try {
